@@ -1,7 +1,7 @@
 import { esc, photo, video } from './lib.mjs';
 import { layout, leadForm } from './layout.mjs';
 
-export function homePage({ site, home, products, services, objects }) {
+export function homePage({ site, home, products, services, objects, vent }) {
   const b = site.base;
   const body = `
 <section class="hero">
@@ -26,9 +26,22 @@ export function homePage({ site, home, products, services, objects }) {
 
 <section class="section">
   <div class="container">
+    <h2>${esc(home.ventTitle)}</h2>
+    <p class="section__intro">${esc(home.ventIntro)}</p>
+    <div class="cards cards--5">
+      ${vent.items.map(i => `<a class="card" href="${b}/ventyliatsiia/${i.slug}/">
+        ${photo(site, i.photo, { ratio: '3/2' })}
+        <h3>${esc(i.title)}</h3><p>${esc(i.short)}</p>
+      </a>`).join('\n      ')}
+    </div>
+  </div>
+</section>
+
+<section class="section section--gray">
+  <div class="container">
     <h2>${esc(home.servicesTitle)}</h2>
     <p class="section__intro">${esc(home.servicesIntro)}</p>
-    <div class="cards cards--5">
+    <div class="cards cards--3">
       ${services.items.map(s => `<a class="card" href="${b}/${s.slug}/">
         ${photo(site, s.photo, { ratio: '3/2' })}
         <h3>${esc(s.title)}</h3><p>${esc(s.short)}</p>
@@ -37,7 +50,7 @@ export function homePage({ site, home, products, services, objects }) {
   </div>
 </section>
 
-<section class="section section--gray">
+<section class="section">
   <div class="container">
     <h2>${esc(home.advantagesTitle)}</h2>
     <p class="section__intro">${esc(home.advantagesIntro)}</p>

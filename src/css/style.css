@@ -139,3 +139,34 @@ p{margin:0 0 1em}
 @media(min-width:700px) and (max-width:959px){.cards--4{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:700px) and (max-width:959px){.cards--5{grid-template-columns:repeat(2,1fr)}.cards--5>:last-child{grid-column:span 2}}
 @media(min-width:960px){.cards--5{grid-template-columns:repeat(6,1fr)}.cards--5>:nth-child(-n+3){grid-column:span 2}.cards--5>:nth-child(n+4){grid-column:span 3}}
+
+/* меню з підрозділами */
+.nav__dd{position:relative}
+.nav__sub{display:none}
+.crumbs{padding-top:16px;padding-bottom:0;font-size:14px;color:var(--ink-2)}
+.crumbs a{text-decoration:none}.crumbs a:hover{text-decoration:underline}.crumbs span{margin:0 2px}
+.section--tight{padding-top:24px}
+.two-col{display:grid;gap:32px}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ticks li{position:relative;padding-left:28px}
+.ticks li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:8px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg) scale(.85)}
+.steps--list{margin:0;grid-template-columns:1fr!important;gap:12px}
+.steps--list li{display:flex;gap:16px;align-items:flex-start;padding:16px}
+.steps--list .steps__n{flex:none;margin:0}
+.steps--list h3{margin:0 0 2px}
+.gallery{display:grid;gap:12px;grid-template-columns:1fr 1fr;margin-top:16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.chip{padding:10px 16px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:500}
+.chip:hover{border-color:var(--accent)}
+.nav.open .nav__sub{display:block;padding-left:16px}
+.nav.open .nav__sub a{font-size:16px;color:var(--ink-2)}
+@media(min-width:700px){.gallery{grid-template-columns:repeat(4,1fr)}.two-col{grid-template-columns:1fr 1fr;gap:56px}}
+@media(min-width:960px){
+  .nav{gap:20px}
+  .nav__sub{position:absolute;left:-16px;top:100%;min-width:230px;padding:10px 0;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+  .nav__dd:hover .nav__sub,.nav__dd:focus-within .nav__sub{display:block}
+  .nav__sub a{display:block;padding:9px 18px;white-space:nowrap}
+  .nav__sub a:hover{background:var(--bg-2)}
+  .nav__dd::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px}
+}
+@media(min-width:960px) and (max-width:1179px){.header__phone{display:none}}

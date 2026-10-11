@@ -3,6 +3,7 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { homePage } from './templates/home.mjs';
+import { ventHub, ventPage } from './templates/ventilation.mjs';
 
 const read = f => JSON.parse(readFileSync(new URL(`./data/${f}.json`, import.meta.url), 'utf8'));
 const data = {
@@ -10,8 +11,11 @@ const data = {
   home: read('home'),
   products: read('products'),
   services: read('services'),
-  objects: read('objects')
+  objects: read('objects'),
+  vent: read('ventilation')
 };
+// Підменю «Вентиляція» береться з data/ventilation.json
+data.site.nav = data.site.nav.map(n => n.href === '/ventyliatsiia/' ? { ...n, children: data.vent.items.map(i => ({ title: i.title, href: `/ventyliatsiia/${i.slug}/` })) } : n);
 
 const OUT = new URL('./dist/', import.meta.url).pathname;
 rmSync(OUT, { recursive: true, force: true });
@@ -19,6 +23,8 @@ mkdirSync(OUT, { recursive: true });
 
 const pages = []; // { path, html }
 pages.push({ path: '/', html: homePage(data) });
+pages.push({ path: '/ventyliatsiia/', html: ventHub(data) });
+for (const item of data.vent.items) pages.push({ path: `/ventyliatsiia/${item.slug}/`, html: ventPage(data, item) });
 
 for (const p of pages) {
   const file = join(OUT, p.path, p.path.endsWith('.html') ? '' : 'index.html');

@@ -39,7 +39,9 @@ ${schema ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` :
   <div class="container header__in">
     <a class="logo" href="${b}/" aria-label="${esc(site.name)} — на головну">ВЕНТ<span>ФЕКТОРІ</span></a>
     <nav class="nav" id="nav" aria-label="Основне меню">
-      ${site.nav.map(n => `<a href="${b}${n.href}"${n.href === path ? ' aria-current="page"' : ''}>${esc(n.title)}</a>`).join('\n      ')}
+      ${site.nav.map(n => n.children
+        ? `<div class="nav__dd"><a href="${b}${n.href}"${path.startsWith(n.href) ? ' aria-current="page"' : ''}>${esc(n.title)}</a><div class="nav__sub">${n.children.map(c => `<a href="${b}${c.href}">${esc(c.title)}</a>`).join('')}</div></div>`
+        : `<a href="${b}${n.href}"${n.href === path ? ' aria-current="page"' : ''}>${esc(n.title)}</a>`).join('\n      ')}
       <a class="nav__phone-m" href="tel:${site.phoneRaw}">${esc(site.phone)}</a>
     </nav>
     <a class="header__phone" href="tel:${site.phoneRaw}">${esc(site.phone)}</a>
@@ -78,7 +80,7 @@ ${body}
 }
 
 // Форма заявки (використовується на головній і в контактах)
-export function leadForm(site, { id = 'zayavka' } = {}) {
+export function leadForm(site, { id = 'zayavka', topic = '' } = {}) {
   return `<form class="form" id="${id}" data-form action="${esc(site.formAction)}" method="POST" enctype="multipart/form-data">
   <div class="form__row">
     <label>Ім'я<input name="name" type="text" required autocomplete="name"></label>
@@ -87,7 +89,7 @@ export function leadForm(site, { id = 'zayavka' } = {}) {
   <label>Що потрібно
     <select name="topic" required>
       <option value="">Оберіть…</option>
-      ${site.formTopics.map(t => `<option>${esc(t)}</option>`).join('')}
+      ${site.formTopics.map(t => `<option${t === topic ? ' selected' : ''}>${esc(t)}</option>`).join('')}
     </select>
   </label>
   <label>Опис<textarea name="message" rows="4" placeholder="Розміри, кількість, об'єкт, терміни"></textarea></label>

@@ -13,3 +13,9 @@ export function photo(site, p, { ratio = '4/3', cls = '', eager = false } = {}) 
 }
 
 export const link = (site, href) => site.base + href;
+
+// Відео YouTube: у JSON вкажіть лише "id" (те, що після v= у посиланні). Плеєр вантажиться після кліку.
+export function video(v, { ratio = '16/9' } = {}) {
+  const url = `https://www.youtube.com/watch?v=${esc(v.id)}`;
+  return `<a class="video" data-video="${esc(v.id)}" href="${url}" target="_blank" rel="noopener" style="aspect-ratio:${ratio};background-image:url(https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg)" aria-label="Дивитися відео: ${esc(v.title)}"><span class="video__play" aria-hidden="true"></span><span class="video__title">${esc(v.title)}</span></a>`;
+}

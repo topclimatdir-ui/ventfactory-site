@@ -36,3 +36,16 @@ document.querySelectorAll('[data-form]').forEach(form => {
     }
   });
 });
+
+// Відео: плеєр YouTube підвантажується тільки після кліку
+document.querySelectorAll('[data-video]').forEach(el => {
+  el.addEventListener('click', e => {
+    e.preventDefault();
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + el.dataset.video + '?autoplay=1&rel=0';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    f.title = el.getAttribute('aria-label');
+    el.replaceChildren(f);
+  }, { once: true });
+});

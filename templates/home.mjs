@@ -1,4 +1,4 @@
-import { esc, photo } from './lib.mjs';
+import { esc, photo, video } from './lib.mjs';
 import { layout, leadForm } from './layout.mjs';
 
 export function homePage({ site, home, products, services, objects }) {
@@ -47,7 +47,17 @@ export function homePage({ site, home, products, services, objects }) {
   </div>
 </section>
 
-<section class="section">
+${home.videos?.length ? `<section class="section">
+  <div class="container">
+    <h2>${esc(home.videosTitle)}</h2>
+    <p class="section__intro">${esc(home.videosIntro)}</p>
+    <div class="cards cards--3">
+      ${home.videos.map(v => video(v)).join('\n      ')}
+    </div>
+  </div>
+</section>` : ''}
+
+<section class="section section--gray">
   <div class="container">
     <div class="section__head"><h2>${esc(home.catalogTitle)}</h2><a class="more" href="${b}/produktsiya/">Увесь каталог →</a></div>
     <div class="cards cards--3 cards--tiles">

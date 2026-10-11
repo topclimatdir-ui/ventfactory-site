@@ -34,7 +34,10 @@
       "slug": "reshitky",
       "title": "Решітки",
       "short": "Власне виробництво вентиляційних решіток",
-      "photo": "Фото: вентиляційна решітка"
+      "photo": {
+        "src": "/images/reshitky-2.jpg",
+        "label": "Фото: вентиляційна решітка"
+      }
     },
     {
       "slug": "obladnannia",

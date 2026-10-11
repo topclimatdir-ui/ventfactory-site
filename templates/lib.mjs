@@ -7,7 +7,7 @@ export function photo(site, p, { ratio = '4/3', cls = '', eager = false } = {}) 
   const label = typeof p === 'string' ? p : p.label;
   const src = typeof p === 'string' ? '' : p.src;
   if (src) {
-    return `<img class="photo ${cls}" style="aspect-ratio:${ratio}" src="${site.base}${esc(src)}" alt="${esc(label)}" ${eager ? '' : 'loading="lazy"'} decoding="async">`;
+    return `<img class="photo ${cls}" style="aspect-ratio:${ratio}" src="${/^https?:/.test(src) ? esc(src) : site.base + esc(src)}" alt="${esc(label)}" ${eager ? '' : 'loading="lazy"'} decoding="async">`;
   }
   return `<div class="ph ${cls}" style="aspect-ratio:${ratio}" role="img" aria-label="${esc(label)}"><span>${esc(label)}</span></div>`;
 }

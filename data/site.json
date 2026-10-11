@@ -14,11 +14,26 @@
   "hours": "Пн–Пт: уточнюється",
   "formAction": "https://formspree.io/f/XXXXXXXX",
   "nav": [
-    { "title": "Продукція", "href": "/produktsiya/" },
-    { "title": "Послуги", "href": "/poslugy/" },
-    { "title": "Об'єкти", "href": "/obiekty/" },
-    { "title": "Про нас", "href": "/pro-nas/" },
-    { "title": "Контакти", "href": "/kontakty/" }
+    {
+      "title": "Продукція",
+      "href": "/produktsiya/"
+    },
+    {
+      "title": "Послуги",
+      "href": "/poslugy/"
+    },
+    {
+      "title": "Об'єкти",
+      "href": "/obiekty/"
+    },
+    {
+      "title": "Про нас",
+      "href": "/pro-nas/"
+    },
+    {
+      "title": "Контакти",
+      "href": "/kontakty/"
+    }
   ],
   "formTopics": [
     "Прямокутні повітроводи",
@@ -28,6 +43,7 @@
     "Решітки",
     "Вентиляційне обладнання",
     "Розкрій листового металу",
+    "Вентиляція басейнів",
     "Монтаж вентиляції під ключ",
     "Демонтаж старих систем",
     "Інше"

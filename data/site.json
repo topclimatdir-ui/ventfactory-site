@@ -1,0 +1,35 @@
+{
+  "name": "ТОВ «ВЕНТ ФЕКТОРІ»",
+  "brand": "ВЕНТ ФЕКТОРІ",
+  "domain": "ventfactory.com.ua",
+  "base": "",
+  "phone": "+38 067 8866 255",
+  "phoneRaw": "+380678866255",
+  "email": "ventfactory.kr@gmail.com",
+  "telegram": "https://t.me/ventfactorykr",
+  "city": "Кривий Ріг",
+  "address": "м. Кривий Ріг, вул. Вільної Ічкерії, 15",
+  "addressNote": "Виробництво і склад",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Кривий+Ріг,+вул.+Вільної+Ічкерії,+15",
+  "hours": "Пн–Пт: уточнюється",
+  "formAction": "https://formspree.io/f/XXXXXXXX",
+  "nav": [
+    { "title": "Продукція", "href": "/produktsiya/" },
+    { "title": "Послуги", "href": "/poslugy/" },
+    { "title": "Об'єкти", "href": "/obiekty/" },
+    { "title": "Про нас", "href": "/pro-nas/" },
+    { "title": "Контакти", "href": "/kontakty/" }
+  ],
+  "formTopics": [
+    "Прямокутні повітроводи",
+    "Круглі повітроводи",
+    "Фасонні вироби",
+    "Зонти",
+    "Решітки",
+    "Вентиляційне обладнання",
+    "Розкрій листового металу",
+    "Монтаж вентиляції під ключ",
+    "Демонтаж старих систем",
+    "Інше"
+  ]
+}

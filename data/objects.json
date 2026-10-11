@@ -19,22 +19,36 @@
       ]
     },
     {
-      "slug": "kharchoblok",
-      "title": "Вентиляція харчоблоку",
+      "slug": "promyslovyi-tsekh",
+      "title": "Вентиляція промислового цеху",
       "place": "Кривий Ріг",
       "year": "2025",
-      "text": "Що зроблено: описати склад робіт.",
+      "text": "Що зроблено: описати склад робіт (прямокутні повітроводи, припливна установка, осьовий вентилятор).",
+      "after": {
+        "src": "/images/obiekt-promcekh-1.jpg",
+        "label": "Фото: промисловий цех після монтажу"
+      },
       "before": "Фото ДО",
-      "after": "Фото ПІСЛЯ"
+      "gallery": [
+        "/images/obiekt-promcekh-1.jpg",
+        "/images/obiekt-promcekh-2.jpg"
+      ]
     },
     {
-      "slug": "sklad",
-      "title": "Вентиляція складу",
+      "slug": "ustanovka",
+      "title": "Вентиляційна установка з повітроводами",
       "place": "Кривий Ріг",
       "year": "2025",
       "text": "Що зроблено: описати склад робіт.",
+      "after": {
+        "src": "/images/obiekt-ustanovka-1.jpg",
+        "label": "Фото: вентиляційна установка з повітроводами"
+      },
       "before": "Фото ДО",
-      "after": "Фото ПІСЛЯ"
+      "gallery": [
+        "/images/obiekt-ustanovka-1.jpg",
+        "/images/obiekt-ustanovka-2.jpg"
+      ]
     }
   ]
 }

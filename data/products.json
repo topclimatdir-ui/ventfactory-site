@@ -22,7 +22,10 @@
       "slug": "fasonni-vyroby",
       "title": "Фасонні вироби",
       "short": "Відводи, переходи, трійники, врізки",
-      "photo": "Фото: відвід, перехід, трійник"
+      "photo": {
+        "src": "/images/fasonni-vyroby-1.jpg",
+        "label": "Фото: круглі вставки з фланцями"
+      }
     },
     {
       "slug": "zonty",

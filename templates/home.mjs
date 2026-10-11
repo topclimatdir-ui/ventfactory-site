@@ -73,7 +73,7 @@ ${home.videos?.length ? `<section class="section">
   <div class="container">
     <div class="section__head"><h2>${esc(home.objectsTitle)}</h2><a class="more" href="${b}/obiekty/">Усі об'єкти →</a></div>
     <div class="cards cards--3">
-      ${objects.items.map(o => `<a class="card" href="${b}/obiekty/#${o.slug}">
+      ${objects.items.slice(0, 3).map(o => `<a class="card" href="${b}/obiekty/#${o.slug}">
         ${photo(site, o.after, { ratio: '3/2' })}
         <h3>${esc(o.title)}</h3><p>${esc(o.place)}, ${esc(o.year)}</p>
       </a>`).join('\n      ')}

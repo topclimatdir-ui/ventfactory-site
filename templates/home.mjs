@@ -28,7 +28,7 @@ export function homePage({ site, home, products, services, objects }) {
   <div class="container">
     <h2>${esc(home.servicesTitle)}</h2>
     <p class="section__intro">${esc(home.servicesIntro)}</p>
-    <div class="cards cards--4">
+    <div class="cards cards--5">
       ${services.items.map(s => `<a class="card" href="${b}/${s.slug}/">
         ${photo(site, s.photo, { ratio: '3/2' })}
         <h3>${esc(s.title)}</h3><p>${esc(s.short)}</p>
